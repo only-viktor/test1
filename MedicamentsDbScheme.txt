@@ -1,0 +1,15 @@
+Tables
+
+    diseases:
+id int primary key
+name varchar(100) unique not null
+
+    medicaments:
+id int primary key
+name varchar(100) unique not null
+expired_at integer not null
+
+    medicaments_diseases:
+medicament_id int not null foreign key references medicaments(id)
+diseases_id   int not null foreign key references diseases(id)
+unique index (medicament_id, diseases_id)
